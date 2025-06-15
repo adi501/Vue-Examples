@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue Directives with Expressions Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+         <div v-bind:title="firstName + ' ' + lastName">Hover to see my name</div>
+        <h2 v-if="score > 50">Congratulations! You passed.</h2>
+        <h2 v-else>Try again!</h2>
+        <p v-bind:title="'Score is ' + score">Your score: {{ score }}</p>
+        <button v-on:click="score += 10">Increase Score</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                score: 40,
+                firstName: 'JC',
+                lastName: 'Adi'
+            }
+        });
+    </script>
+</body>
+</html>

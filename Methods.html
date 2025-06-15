@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Methods Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>{{ message }}</h2>
+        <h3>Full Name: {{ getFullName() }}</h3>
+        <h1>{{ getFullName2(F_Name, L_Name) }}</h1>
+        <h1>{{ getFullName3().name }}</h1>
+        <button @click="reverseMessage">Reverse Message</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue Methods!',
+                F_Name: 'JC',
+                L_Name: 'Adi'
+            },
+            methods: {
+                getFullName() {
+                    return this.F_Name +' '+ this.L_Name;
+                },
+                getFullName2: function(first, last) {
+    	        return first + ' ' + last;
+                },
+                getFullName3: function() {
+                return {
+                name: this.F_Name + ' ' + this.L_Name
+                };
+                },
+                reverseMessage() {
+                    this.message = this.message.split('').reverse().join('');
+                }
+                
+            }
+        });
+    </script>
+</body>
+</html>

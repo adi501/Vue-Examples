@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{age}}*{{2}} ={{ age*2 }}</h1>
+        <h1> {{ age>60 ?'old':'young' }}</h1>
+        <h1> {{ name.split(' ')[0] }}</h1>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                age: 20 ,
+                 name: 'JC Adi' 
+                    }
+        });
+    </script>
+</body>
+</html>
